@@ -39,6 +39,12 @@ main(input_shapefile, output_dir, reduction_percentages, years, scenarios)
 
 Shapefiles are saved in the format: glaciers_[scenario]_[year].shp
 
+## 🌍 Glacier Area Change Visualization
+
+Below is a visual illustration showing the modeled terminus retreat based on area reduction:
+
+![Glacier Change](karnali_area_change.gif)
+
 ## ✍️ Author
 
 Developed by [Siddhant Baral](https://github.com/Siddhantbaral)
