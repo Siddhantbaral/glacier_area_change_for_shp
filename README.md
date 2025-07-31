@@ -25,8 +25,8 @@ pip install geopandas numpy tqdm
 
 Adjust input paths and parameters in the `main()` function:
 ```python
-input_shapefile = r'E:\UK_glacier_shp\oggm_filtered_glacier_karnali.shp'
-output_dir = r'E:\UK_glacier_shp'
+input_shapefile = r'E:\glacier_input\glacier.shp'
+output_dir = r'E:\glacier_output'
 years = [2050, 2075, 2100]
 reduction_percentages = {
     'ssp245': [13.94, 47.02, 61.50],
