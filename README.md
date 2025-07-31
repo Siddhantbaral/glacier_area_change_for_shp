@@ -1,61 +1,51 @@
-## 🌍 Glacier Area Change Simulation using Shapefiles
+# Glacier Area Change Simulation using Shapefiles
 
-This Python project models glacier retreat by applying area reduction percentages to glacier geometries across climate scenarios and years.
+This Python script models glacier retreat by applying area reduction percentages to existing glacier geometries stored in a shapefile. It supports multiple climate scenarios and future projection years.
 
-### 📌 Use Case
+## 📍 Use Case
 
 Designed for research or policy analysis where glacier change must be visualized spatially under SSP climate scenarios. Ideal for projects with pre-processed glacier shapefiles and estimated area change data.
 
----
+## 🧰 Features
 
-## 🧮 Model Features
+- Loads glacier geometries using `GeoPandas`
+- Applies area reduction through iterative negative buffering
+- Handles multiple scenarios (`ssp245`, `ssp585`) and years (`2024`, `2050`, `2075`, `2100`)
+- Uses `ThreadPoolExecutor` for faster multi-glacier processing
+- Outputs adjusted shapefiles per scenario-year combination
+- Logs actual vs target area and reduction percentages
 
-- Loads glacier geometries via `GeoPandas`
-- Applies area reduction using iterative negative buffering
-- Supports multiple scenarios (`ssp245`, `ssp585`) and years (`2024`, `2050`, `2075`, `2100`)
-- Accelerates multi-glacier processing with `ThreadPoolExecutor`
-- Outputs adjusted shapefiles per scenario-year
-- Logs actual vs target area reductions
-
----
-
-## 🖼️ Glacier Area Change Visualization
-
-This new module creates an animated representation of glacier retreat using SSP scenario overlays. It's based on custom DEM styling and progressive rendering of hydrologic features.
-
-### ✨ Visualization Features
-
-- **GIF Animation** with temporal layers from 2024 to 2100
-- **DEM Terrain Styling** with a custom color map
-- **Karnali River Flow Animation** in progressive blue tones
-- **Frame-rich Rendering** (`fps=60`, 100 frames per scene)
-- **Scenario Comparison** in a single loop: `ssp245` vs `ssp585`
-
-### ▶️ How to Run
+## 📦 Requirements
 
 ```bash
-python animation_area_change.py
+pip install geopandas numpy tqdm
 ```
 
-Update the following paths inside the script:
-- `input_directory`: Folder with glacier shapefiles (`glaciers_[scenario]_[year].shp`)
-- `dem_path`: DEM raster (`.tif`)
-- `river_path`: Karnali River shapefile (`.shp`)
-- `output_animation`: Path to save the output GIF
+## 🔧 Usage
 
----
+Adjust input paths and parameters in the `main()` function:
+```python
+# Example usage
+input_shapefile = r'E:\glacier_input\glacier.shp'
+output_dir = r'E:\glacier_output'
+years = [2024, 2050, 2075, 2100]
+reduction_percentages = {
+    'ssp245': [23.26, 34.08, 52.43, 60.31],
+    'ssp585': [23.08, 33.81, 58.25, 78.96]
+}
+scenarios = ['ssp245', 'ssp585']
+main(input_shapefile, output_dir, reduction_percentages, years, scenarios)
+```
+## 📁 Output
 
-### 📷 Sample Output
+Shapefiles are saved in the format: glaciers_[scenario]_[year].shp
 
-<p align="center">
-  <img src="docs/glacier_animation_sample.gif" alt="Glacier Animation" width="600"/>
-</p>
+## 🌍 Glacier Area Change Visualization
 
----
+Below is a visual illustration showing the modeled terminus retreat based on area reduction:
+
+![Glacier Change](karnali_area_change.gif)
 
 ## ✍️ Author
 
-Developed by **Siddhant Baral**
-
----
-
+Developed by [Siddhant Baral](https://github.com/Siddhantbaral)
