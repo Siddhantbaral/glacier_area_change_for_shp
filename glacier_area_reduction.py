@@ -63,7 +63,7 @@ def main(input_shapefile, output_dir, reduction_percentages, years, scenarios):
 
     for scenario in scenarios:
         for year, reduction_percentage in zip(years, reduction_percentages[scenario]):
-            print(f"\nScenario: {scenario}, Year: {year}, Reduction Percentage: {reduction_percentage:.2f}%")
+            print(f"\nScenario: {scenario}, Year: {year}, Reduction Percentage: {reduction_percentage}")
 
             target_areas_km2 = [calculate_target_area(area, reduction_percentage) for area in initial_areas_km2]
             
@@ -93,10 +93,10 @@ def main(input_shapefile, output_dir, reduction_percentages, years, scenarios):
 # Example usage
 input_shapefile = r'E:\glacier_input\glacier.shp'
 output_dir = r'E:\glacier_output'
-years = [2050, 2075, 2100]
+years = [2024, 2100]
 reduction_percentages = {
-    'ssp245': [13.94, 47.02, 61.50],
-    'ssp585': [19.11, 57.99, 87.71]
+    'ssp245': [9.8, 48.3],
+    'ssp585': [9.6, 72.6]
 }
 scenarios = ['ssp245', 'ssp585']
 main(input_shapefile, output_dir, reduction_percentages, years, scenarios)
