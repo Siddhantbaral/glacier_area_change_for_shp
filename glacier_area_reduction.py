@@ -91,8 +91,8 @@ def main(input_shapefile, output_dir, reduction_percentages, years, scenarios):
             print(f"\nSaved shapefile for {scenario} {year} at {output_shapefile}")
 
 # Example usage
-input_shapefile = r'E:\UK_glacier_shp\oggm_filtered_glacier_karnali.shp'
-output_dir = r'E:\UK_glacier_shp'
+input_shapefile = r'E:\glacier_input\glacier.shp'
+output_dir = r'E:\glacier_output'
 years = [2050, 2075, 2100]
 reduction_percentages = {
     'ssp245': [13.94, 47.02, 61.50],
