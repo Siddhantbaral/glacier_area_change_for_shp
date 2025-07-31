@@ -19,6 +19,7 @@ Designed for research or policy analysis where glacier change must be visualized
 
 ```bash
 pip install geopandas numpy tqdm
+```
 
 ## 🔧 Usage
 
@@ -33,7 +34,7 @@ reduction_percentages = {
 }
 scenarios = ['ssp245', 'ssp585']
 main(input_shapefile, output_dir, reduction_percentages, years, scenarios)
-
+```
 ## 📁 Output
 
 Shapefiles are saved in the format: glaciers_[scenario]_[year].shp
