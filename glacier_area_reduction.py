@@ -93,10 +93,11 @@ def main(input_shapefile, output_dir, reduction_percentages, years, scenarios):
 # Example usage
 input_shapefile = r'E:\glacier_input\glacier.shp'
 output_dir = r'E:\glacier_output'
-years = [2024, 2100]
+years = [2024, 2050, 2075, 2100]
 reduction_percentages = {
-    'ssp245': [9.8, 48.3],
-    'ssp585': [9.6, 72.6]
+    'ssp245': [23.26, 34.08, 52.43, 60.31],
+    'ssp585': [23.08, 33.81, 58.25, 78.96]
 }
 scenarios = ['ssp245', 'ssp585']
 main(input_shapefile, output_dir, reduction_percentages, years, scenarios)
+
